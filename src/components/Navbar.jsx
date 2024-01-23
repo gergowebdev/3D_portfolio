@@ -28,8 +28,9 @@ const Navbar = () => {
                         height={15}
                         className="w-9 h-9 object-contain"
                     />
-                    <p className="text-white text-[18px] font-bold cursor-pointer">
-                        Gergő <span className="sm:block hidden">Gyenes</span>
+                    <p className="flex text-white text-[18px] font-bold cursor-pointer">
+                        Gergő &nbsp;{" "}
+                        <span className="sm:block hidden">Gyenes</span>
                     </p>
                 </Link>
                 <ul className="list-none hidden sm:flex flex-row gap-10">
@@ -68,7 +69,10 @@ const Navbar = () => {
                                             ? "text-white"
                                             : "text-secondary"
                                     }font-poppins font-medium cursor-pointer text-[16px]`}
-                                    onClick={() => setActive(link.title)}
+                                    onClick={() => {
+                                        setToggle(!toggle);
+                                        setActive(link.title);
+                                    }}
                                 >
                                     <a href={`#${link.id}`}>{link.title}</a>
                                 </li>
